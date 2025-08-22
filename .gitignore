@@ -1,0 +1,17 @@
+# Ignore SQL dumps and data exports
+*.sql
+*.dump
+*.bak
+*.csv
+*.tsv
+*.xlsx
+*.json
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python notebooks/venv if you add them later
+*.ipynb_checkpoints
+__pycache__/
+venv/
