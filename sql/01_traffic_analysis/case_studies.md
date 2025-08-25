@@ -156,3 +156,83 @@ GROUP BY 1 ;
 5. By **bidding up desktop**, traffic increased in the higher-performing segment.
 
 
+## 🚀 Forward Recommendations
+
+### 1) Rebalance paid spend toward efficient segments (now)
+
+**Why:** Gsearch nonbrand dominates traffic, but overall CVR was 2.8% vs 4% target. Desktop converts far better than mobile, and desktop sessions rose after bidding up.
+**Actions**
+
+* **Bid up**: Gsearch nonbrand **desktop** campaigns by small, controlled increments (e.g., +10–15%).
+* **Hold/trim**: Gsearch nonbrand **mobile** until UX issues are addressed.
+* **Watch volume sensitivity**: Expect sessions to move with bids (as seen post bid-down).
+  **Metrics to track (weekly)**: Sessions, Orders, CVR, **Revenue/Session** by device & campaign.
+  **Decision rule**: Keep raising desktop bids while **Revenue/Session ↑** or **Cost per Acquisition ≤ target**; pause increases if diminishing returns.
+
+---
+
+### 2) Fix mobile conversion friction (1–3 sprints)
+
+**Why:** Mobile CVR (\~0.96%) is far below desktop (\~3.73%) and mobile sessions are declining.
+**Actions**
+
+* Audit mobile **billing & checkout steps** (latency, form fields, errors).
+* Run **A/B tests** on mobile landers (copy, CTA prominence, image weight), and **billing page** (guest checkout, auto-fill).
+* Prioritize fixes that reduce taps/keystrokes and time-to-pay.
+  **Metrics**: Mobile **funnel step CVRs** (landing→product, product→billing, billing→order),       **Revenue/Session (mobile)**, **Drop-off by page**.
+  **Goal**: Lift mobile CVR by **+0.5–1.0 pp**; then reassess mobile bids.
+
+---
+
+### 3) Keep compounding wins via funnel tests (continuous)
+
+**Why:** Prior lander/billing tests generated measurable lift in CVR/revenue (your test workflow).
+**Actions**
+
+* Institutionalize a **test pipeline**: one live A/B at lander, one at billing, always.
+* Size each test off historical **baseline CVR** and traffic (to reach 80% power).
+* For winning variants, **estimate incremental revenue** using post-test traffic & CVR deltas.
+  **Metrics**: **Incremental revenue**, **Lift in CVR**, **Time-to-impact** (rollout date to revenue effect).
+  **Guardrail**: Ensure **Revenue/Session** stays flat or improves during tests.
+
+---
+
+### 4) Diversify beyond a single channel (next quarter)
+
+**Why:** Over-reliance on Gsearch nonbrand concentrates risk; volume falls when bids drop.
+**Actions**
+
+* Build **channel portfolio** view weekly (Gsearch nonbrand, Bsearch nonbrand, brand search, organic, direct).
+* Identify channels with rising **CVR** or **Revenue/Session** to merit incremental budget.
+* Nurture **brand search** and **direct** via content/CRM to reduce paid dependence.
+
+
+---
+
+### 5) Product & cross-sell optimisation (next)
+
+**Why:** You’ll analyse product revenue/margin and cross-sell; these change Average Order Value and Lifetime Value.
+**Actions**
+
+* Track **revenue & margin by product** monthly; flag low-margin best-sellers for price/pack changes.
+* Build a **cross-sell matrix** post product launches to design bundles and in-cart recommendations.
+  **Metrics**: **AOV**, **Attach rate** (secondary items/order), **Gross margin %**.
+
+---
+
+### 6) Reporting & operating cadence (make it repeatable)
+
+**Dashboards/Views to maintain (SQL backed):**
+
+* **Channel efficiency**: Sessions, Orders, CVR, **Revenue/Session**, **CPA** by source/campaign/device (weekly).
+* **Funnel**: Step CVRs per lander/billing variant; mobile vs desktop (weekly).
+* **Product**: Revenue, margin, refund rate; cross-sell pairs (monthly).
+* **Seasonality**: Sessions & Orders by week/quarter to anticipate peaks.
+  **Process:**
+* Monday standup: review last week, decide **bid changes** and **test launches**.
+* Mid-week check: guardrails (no CVR drops > X%, no CPA spikes).
+* Month-end: roll up tests and approve winning variants.
+
+
+
+
