@@ -6,6 +6,7 @@
 *.tsv
 *.xlsx
 *.json
+*.Rhistory
 
 # Ignore system files
 .DS_Store
