@@ -38,4 +38,27 @@ This catalog defines the **business metrics** implemented in the Ecommerce SQL P
 
 ---
 
+### 5.Bounced Sessions
+
+* **Definition**: Sessions where a user viewed only one page before leaving the site.
+* **Logic**: Count of sessions that have exactly one pageview within the defined cohort and time window.
+* **Why it matters**: Identifies visitors who leave immediately without engaging further, often signaling landing page or traffic quality issues.
+
+---
+
+### 6.Bounce Rate
+
+* **Definition**: The percentage of sessions that bounced compared to the total sessions in the same cohort and time window.
+* **Logic**:  `Number of bounced sessions \ total sessions `.
+* **Why it matters**: Provides a high-level view of landing page and traffic effectiveness. A high bounce rate may indicate mismatched targeting or poor first impressions.
+
+---
+
+### Click-Through Rate (CTR) — Funnel
+
+* **Definition**: The proportion of sessions that progressed from one page (or funnel step) to the next.
+* **Logic**:  `Number of sessions that reached the next page \  number of sessions that saw the prior page.`
+* **Why it matters**: Highlights how effectively users move through the funnel, and pinpoints where drop-offs occur. Useful for evaluating tests like lander changes or billing page redesigns.
+
+
 ## 📌 Notes
