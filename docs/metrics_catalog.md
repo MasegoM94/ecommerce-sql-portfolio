@@ -54,11 +54,42 @@ This catalog defines the **business metrics** implemented in the Ecommerce SQL P
 
 ---
 
-### Click-Through Rate (CTR) — Funnel
+### 7.Click-Through Rate (CTR) — Funnel
 
 * **Definition**: The proportion of sessions that progressed from one page (or funnel step) to the next.
 * **Logic**:  `Number of sessions that reached the next page \  number of sessions that saw the prior page.`
 * **Why it matters**: Highlights how effectively users move through the funnel, and pinpoints where drop-offs occur. Useful for evaluating tests like lander changes or billing page redesigns.
 
 
-## 📌 Notes
+### 8.Organic Search Sessions
+
+* **Definition**: Sessions that arrived via an organic search engine result (unpaid), not tagged with a UTM source.
+* **Logic**: Count distinct sessions where the traffic has **no `utm_source`** and **has a non-null `http_referer`**, within the chosen cohort and time window.
+* **Why it matters**: Indicates SEO health and discoverability. Growth here reduces paid acquisition dependence and often improves blended CAC.
+
+---
+
+### 9.Direct Type-In Sessions
+
+* **Definition**: Sessions that began by typing the URL directly or via bookmarks (i.e., no referring site and no UTM tags).
+* **Logic**: Count distinct sessions where **`utm_source` is null** and **`http_referer` is null**, within the chosen cohort and time window.
+* **Why it matters**: A proxy for brand strength and loyalty—users come intentionally without an external prompt.
+
+---
+
+### 10.Session-to-Order Conversion Rate (CVR)
+
+* **Definition**: The share of sessions that resulted in at least one order in the same session.
+* **Logic**: **Distinct orders ÷ distinct sessions** over the same cohort and time window, with orders attributed to the session that created them.
+* **Why it matters**: Core efficiency metric for the full funnel. Rising CVR signals better traffic quality, UX, and pricing/promo alignment.
+
+---
+
+### 11.Revenue per Billing-Page Session
+
+* **Definition**: Average revenue generated per session that reached a billing page (any billing variant).
+* **Logic**: **Total revenue from orders ÷ distinct sessions that viewed a billing page** (e.g., `/billing` or `/billing-2`) within the selected window. Count each session once.
+* **Why it matters**: Directly measures the effectiveness of the billing step and is ideal for **A/B tests** (e.g., old vs. new billing page). A higher value reflects fewer drop-offs and stronger checkout completion among sessions that reach billing.
+
+---
+
