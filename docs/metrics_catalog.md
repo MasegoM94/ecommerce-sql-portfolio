@@ -147,3 +147,46 @@ This catalog defines the **business metrics** implemented in the Ecommerce SQL P
 * **Why it matters**: Focuses specifically on monetization potential of users who showed purchase intent. Useful for assessing the impact of cross-sell features or changes to the cart page design.
 
 ---
+
+### 19. Repeat Visitor Rate
+
+* **Definition**: The percentage of users who return for more than one session.
+* **Logic**: `Users with >1 session ÷ Total users`.
+* **Why it matters**: Measures customer retention and loyalty at the traffic level, complementing conversion rate.
+
+---
+
+### 20. Average Days Between Sessions
+
+* **Definition**: The average time between a user’s first and second session.
+* **Logic**: For repeat users, calculate `DATEDIFF(second_session, first_session)`, then average across users.
+* **Why it matters**: Helps understand customer return cycles, seasonality, and engagement frequency.
+
+---
+
+### 21. New vs. Repeat Conversion Rate
+
+* **Definition**: Conversion rate segmented by new sessions vs repeat sessions.
+* **Logic**:
+
+  * New CVR = `Orders from new sessions ÷ New sessions`.
+  * Repeat CVR = `Orders from repeat sessions ÷ Repeat sessions`.
+* **Why it matters**: Shows whether repeat visits are more efficient in driving orders compared to first-time visits.
+
+---
+
+### 22. Revenue per Repeat Session
+
+* **Definition**: The average revenue generated per repeat session.
+* **Logic**: `Revenue from repeat sessions ÷ Repeat sessions`.
+* **Why it matters**: Complements overall RPS by showing the incremental value of repeat traffic.
+
+---
+
+### 23. Repeat Channel Distribution
+
+* **Definition**: The breakdown of repeat sessions by acquisition channel (e.g., direct, organic, paid brand, paid nonbrand).
+* **Logic**: Count of repeat sessions per channel ÷ Total repeat sessions.
+* **Why it matters**: Helps assess whether customers return organically or if repeat traffic still requires paid re-acquisition.
+
+---
