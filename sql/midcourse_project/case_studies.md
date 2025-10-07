@@ -4,9 +4,11 @@
 ## 1. Gsearch Monthly Trends
 
 **Business Question**
+
 Gsearch seems to be the biggest driver of our business. Could you pull monthly trends for Gsearch sessions and orders so that we can showcase the growth?
 
 **Approach**
+
 Aggregate monthly sessions and revenue from all sessions where `utm_source = 'gsearch'` up to 27 Nov 2012.
 
 ```sql
@@ -35,9 +37,11 @@ GROUP BY  YEAR(wbs.created_at)
 ## 2. Gsearch Brand vs Nonbrand
 
 **Business Question**
+
 Split Gsearch traffic into brand and nonbrand campaigns to see if brand awareness is growing.
 
 **Approach**
+
 Count monthly sessions and orders by `utm_campaign` (brand vs nonbrand).
 
 ```sql
@@ -66,9 +70,11 @@ GROUP BY YEAR(wbs.created_at)
 ## 3. Gsearch Nonbrand by Device Type
 
 **Business Question**
+
 How do nonbrand Gsearch sessions and orders break down by device type?
 
 **Approach**
+
 Monthly sessions and orders split by `device_type` (desktop vs mobile) for `utm_source = 'gsearch'` and `utm_campaign = 'nonbrand'`.
 
 ```sql
@@ -100,9 +106,11 @@ GROUP BY YEAR(wbs.created_at)
 ## 4. Channel Portfolio Analysis
 
 **Business Question**
+
 How do monthly sessions from Gsearch compare with other channels, and is the business diversifying traffic sources?
 
 **Approach**
+
 Monthly distinct sessions segmented into **Gsearch paid**, **Bsearch paid**, **organic**, and **direct type-in**.
 
 
@@ -141,9 +149,11 @@ GROUP BY YEAR(wbs.created_at)
 ## 5. Session-to-Order Conversion Rate
 
 **Business Question**
+
 Show how website efficiency (session-to-order conversion) improved during the first eight months.
 
 **Approach**
+
 Monthly conversion rate = orders ÷ sessions across the entire site.
 
 ```sql
@@ -169,9 +179,11 @@ GROUP BY YEAR(ws.created_at)
 ## 6. Gsearch Lander Test – Revenue Impact
 
 **Business Question**
+
 Estimate the incremental revenue earned after switching Gsearch nonbrand traffic from the homepage to the new `/lander-1` page.
 
 **Approach**
+
 Compare conversion rates during the test window (19 Jun – 28 Jul) and apply the lift to all nonbrand sessions since the test.
 
 ```sql
@@ -263,9 +275,11 @@ WHERE created_at < '2012-11-27'
 ## 7. Funnel Conversion Analysis
 
 **Business Question**
+
 Compare full conversion funnels for sessions starting on `/home` vs `/lander-1` during the test period (19 Jun – 28 Jul).
 
 **Approach**
+
 Track progression through key pages: landing → products → Mr Fuzzy product page → cart → shipping → billing → thank-you.
 
 ```sql 
@@ -382,9 +396,11 @@ GROUP BY 1
 ## 8. Billing Page Test Impact
 
 **Business Question**
+
 Quantify the revenue lift from testing the new billing page (`/billing-2`) between 10 Sep – 10 Nov.
 
 **Approach**
+
 Compare revenue per billing-page session and project monthly impact.
 
 ```sql 
@@ -429,13 +445,4 @@ WHERE website_pageviews.pageview_url IN ('/billing','/billing-2')
 * Clear recommendation: **roll out `/billing-2` sitewide**.
 
 ---
-
-### Overall Narrative
-
-Across these eight analyses, we demonstrated a **data-driven growth story**:
-
-* Rapid **Gsearch-driven acquisition**, now complemented by rising **organic and direct traffic**.
-* Systematic **experimentation**—new lander and billing pages—that produced measurable **conversion and revenue lifts**.
-* Continuous monitoring of **device mix** and **conversion rates** to guide future UX and marketing investments.
-
 
