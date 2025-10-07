@@ -3,9 +3,11 @@
 ## 1. Identifying Top Website Pages
 
 **Business Question**
+
 Which website pages are most viewed by our visitors, ranked by session volume?
 
 **Approach**
+
 Count distinct sessions per `pageview_url` across all traffic, up to June 9, 2012.
 
 ```sql
@@ -29,9 +31,11 @@ ORDER BY sessions desc
 ## 2. Identifying Top Entry Pages
 
 **Business Question**
+
 Where are users first landing on the site? Which pages serve as entry points?
 
 **Approach**
+
 Extract the minimum pageview ID per session and map it back to the corresponding landing page.
 
 ```sql
@@ -44,8 +48,7 @@ WITH first_page_data as (
 						GROUP BY 
 								website_session_id
       )
-/* join the first page table with website_pageviews table to retrieve the landing page of the first visited page per session 
-and find the count of sessions by landing page*/ 
+/* join the first page table with website_pageviews table to retrieve the landing page of the first visited page per session and find the count of sessions by landing page*/ 
 SELECT 
 		wp.pageview_url as landing_page
 		,COUNT(DISTINCT fp.website_session_id) as num_of_sessions
@@ -67,12 +70,14 @@ ORDER BY num_of_sessions desc
 ## 3. Calculating Bounce Rate for Homepage
 
 **Business Question**
+
 How is the homepage performing as a landing page? Specifically, what are sessions, bounced sessions, and bounce rate?
 
 **Approach**
+
 For each session landing on `/home`, count pageviews and classify sessions with only one pageview as bounces.
 
-**Insights**
+
 ```sql 
 
 WITH min_pgvw_id AS (
@@ -94,6 +99,8 @@ LEFT JOIN 	website_pageviews wp
 
 ```
 
+**Insights**
+
 * **11,048 sessions** landed on the homepage.
 * **6,538 sessions bounced**, yielding a bounce rate of **\~59%**.
 * This is a very high bounce rate, suggesting the homepage was not effective at engaging users beyond the first click.
@@ -103,9 +110,11 @@ LEFT JOIN 	website_pageviews wp
 ## 4. Analysing Landing Page Test (Home vs Lander-1)
 
 **Business Question**
+
 Does the new landing page `/lander-1` perform better than the homepage for gsearch nonbrand traffic?
 
 **Approach**
+
 Pull sessions starting from `/home` or `/lander-1` after `/lander-1` went live (June 19), calculate bounce rate for each group.
 
 ```sql
@@ -116,6 +125,7 @@ FROM website_pageviews
 WHERE pageview_url = '/lander-1'
 ORDER BY created_at ASC
 LIMIT 1; -- first showing 2012-06-19 00:35:54 with id 23504  
+
 /* find each website session with nonbrand paid traffic i.e. gsearch and nonbrand 
 , get the minimum pageview id and the number of page visits per session*/ 
 WITH min_pgvw_id AS (
@@ -131,8 +141,10 @@ WITH min_pgvw_id AS (
 								AND wp.website_pageview_id > 23504 -- first session with the lander page activated
 					GROUP BY website_session_id
 		)
+
 /*by landing url i.e. first page viewed, get the number of sessions , 
 the number of bounced sessions and the bounce rate for each landing page*/ 
+
 SELECT  wp.pageview_url AS landing_url 
 		,COUNT(DISTINCT  mp.website_session_id) as number_of_sessions_home_landing
 		,SUM(CASE WHEN count_pg_visits = 1 then 1 else 0 end) as no_bounced_sessions
@@ -156,12 +168,15 @@ GROUP BY
 ## 5. Landing Page Trend Analysis
 
 **Business Question**
+
 Can we confirm traffic routing between `/home` and `/lander-1` since June 1, and how has bounce rate trended weekly?
 
 **Approach**
+
 Track weekly sessions by landing page (home vs lander-1), and calculate bounce rates over time.
 
 ```sql
+
 -- Pull pageviews joined to sessions for gsearch/nonbrand in date window.
 WITH filtered_sessions AS (        
 					SELECT 	wp.website_session_id
@@ -229,9 +244,11 @@ WITH filtered_sessions AS (
 ## 6. Building Conversion Funnels
 
 **Business Question**
+
 Where do we lose gsearch visitors between `/lander-1` and placing an order? Please build a full conversion funnel.
 
 **Approach**
+
 Trace sessions starting on `/lander-1` through each funnel stage: products page → Mr Fuzzy product page → cart → shipping → billing → thank-you.
 
 ```sql
@@ -305,9 +322,11 @@ FROM number_sessions_stages
 ## 7. Analysing Conversion Funnel Test (Billing vs Billing-2)
 
 **Business Question**
+
 We tested an updated billing page (`/billing-2`). Does it perform better than the original `/billing` page?
 
 **Approach**
+
 Compare sessions hitting `/billing` vs `/billing-2` (after `/billing-2` launched), measuring billing-to-order conversion.
 
 ```sql
@@ -358,3 +377,5 @@ ORDER BY wp.pageview_url
 * **Billing-2 CVR = 62.7%** vs **Billing CVR = 45.7%**.
 * The new billing page clearly outperformed the original.
 * Recommendation: **roll out `/billing-2` sitewide** to improve funnel conversion.
+
+---
