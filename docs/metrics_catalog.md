@@ -190,3 +190,91 @@ This catalog defines the **business metrics** implemented in the Ecommerce SQL P
 * **Why it matters**: Helps assess whether customers return organically or if repeat traffic still requires paid re-acquisition.
 
 ---
+
+### 24. Channel Sessions
+
+* **Definition**: The number of website sessions attributed to each acquisition channel (e.g., paid nonbrand, paid brand, organic, direct).
+* **Logic**: Count of distinct `website_session_id`, grouped by `utm_source`, `utm_campaign`, and derived channel classification.
+* **Why it matters**: Allows evaluation of traffic sources and helps measure dependence on specific acquisition channels.
+
+---
+
+### 25. Channel Conversion Rate
+
+* **Definition**: The percentage of sessions within a given marketing channel that resulted in an order.
+* **Logic**: `Orders from channel ÷ Sessions from channel`.
+* **Why it matters**: Measures efficiency of traffic from each source and identifies the most effective channels for conversions.
+
+---
+
+### 26. Channel Revenue per Session
+
+* **Definition**: The average revenue generated per website session within each channel.
+* **Logic**: `SUM(price_usd) from orders attributed to channel ÷ total sessions from that channel`.
+* **Why it matters**: Reflects both conversion and monetisation efficiency by traffic source.
+
+---
+
+### 27. Revenue Growth Rate
+
+* **Definition**: The percentage change in total revenue between two consecutive periods (monthly or quarterly).
+* **Logic**: `(Current period revenue – Previous period revenue) ÷ Previous period revenue`.
+* **Why it matters**: Quantifies business growth momentum and signals the impact of marketing or product initiatives.
+
+---
+
+### 28. Margin Rate
+
+* **Definition**: The percentage of total revenue retained as profit after deducting cost of goods sold (COGS).
+* **Logic**: `(SUM(price_usd) – SUM(cogs_usd)) ÷ SUM(price_usd)`.
+* **Why it matters**: Indicates profitability trends and product efficiency, especially important for tracking over time or across products.
+
+---
+
+### 29. Products Page Clickthrough Rate (CTR)
+
+* **Definition**: The proportion of sessions that viewed the `/products` page and proceeded to a product detail page.
+* **Logic**: `Sessions that navigated beyond /products ÷ Sessions that viewed /products`.
+* **Why it matters**: Measures user engagement and interest in specific products, reflecting the effectiveness of merchandising.
+
+---
+
+### 30. Products Page Conversion Rate
+
+* **Definition**: The percentage of `/products` page sessions that resulted in an order.
+* **Logic**: `Orders from /products sessions ÷ Sessions that viewed /products`.
+* **Why it matters**: Evaluates the end-to-end conversion success for users who browse the product listing page.
+
+---
+
+### 31. Cross-Sell Rate by Product
+
+* **Definition**: The percentage of orders for a given primary product that included one or more additional products in the same transaction.
+* **Logic**: `Orders with secondary (cross-sold) products ÷ Total orders for that primary product`.
+* **Why it matters**: Quantifies how effectively the cross-sell feature increases basket size and total revenue per order.
+
+---
+
+### 32. Channel Order Volume
+
+* **Definition**: The total number of orders attributed to each marketing channel within a given time frame.
+* **Logic**: Count of distinct `order_id`, grouped by `utm_source` and `utm_campaign`.
+* **Why it matters**: Shows how total sales contributions are distributed across acquisition sources, helping assess dependence and diversification.
+
+---
+
+### 33. Revenue per Session
+
+* **Definition**: The average revenue generated per website session across all traffic sources.
+* **Logic**: `SUM(price_usd) ÷ COUNT(DISTINCT website_session_id)`.
+* **Why it matters**: Measures total monetization efficiency of traffic, reflecting improvements in conversion rate, AOV, and engagement.
+
+---
+
+### 34. Revenue per Order
+
+* **Definition**: The average revenue generated per order.
+* **Logic**: `SUM(price_usd) ÷ COUNT(DISTINCT order_id)`.
+* **Why it matters**: Highlights shifts in product mix, upselling success, or pricing strategy over time.
+
+
