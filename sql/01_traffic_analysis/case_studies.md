@@ -10,7 +10,7 @@ Where are our website sessions coming from in the first month after launch?
 * Pulled sessions from `website_sessions` by `utm_source`, `utm_campaign`, and `http_referer`.
 
 ```sql
-SELECT 	  utm_source
+SELECT    utm_source
 	    	, utm_campaign
         , http_referer
         , COUNT(DISTINCT website_session_id) as sessions
@@ -23,7 +23,7 @@ ORDER BY sessions DESC;
 **Insights**
 
 * **Gsearch nonbrand** was the **largest traffic driver**, primarily from `https://www.gsearch.com`.
-* Other sources contributed smaller volumes, making Gsearch nonbrand the **priority channel for optimization**.
+* Other sources contributed smaller volumes, making Gsearch nonbrand the **priority channel for optimisation**.
 
 ---
 
