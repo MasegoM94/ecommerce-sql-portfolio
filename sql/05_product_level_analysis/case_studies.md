@@ -4,9 +4,10 @@ This section explores how Maven Fuzzy Factory analyzed product-level sales, laun
 
 ---
 
-## 1️⃣ Product-Level Sales Analysis
+## 1. Product-Level Sales Analysis
 
 **Business Question**
+
 We’re about to launch a new product, and I’d like to do a deep dive on our current flagship product. Can you please pull monthly trends to date for number of sales, total revenue, and total margin generated for the business?
 
 **Approach**
@@ -33,9 +34,10 @@ GROUP BY YEAR(created_at)
 
 ---
 
-## 2️⃣ Product Launch Sales Analysis
+## 2. Product Launch Sales Analysis
 
 **Business Question**
+
 We launched our second product on January 6th. Can you pull monthly order volume, overall conversion rates, revenue per session, and a breakdown of sales by product since April 1, 2012?
 
 **Approach**
@@ -71,9 +73,10 @@ GROUP BY 1,2
 
 ---
 
-## 3️⃣ Product Pathing Analysis
+## 3. Product Pathing Analysis
 
 **Business Question**
+
 With the new product launched, what paths are users taking from the `/products` page? Specifically, how do clickthrough rates compare pre- vs post-launch?
 
 **Approach**
@@ -129,9 +132,10 @@ ORDER BY 1 DESC
 
 ---
 
-## 4️⃣ Product Conversion Funnels
+## 4. Product Conversion Funnels
 
 **Business Question**
+
 Since January 6th, how do conversion funnels compare for Mr. Fuzzy vs the Love Bear?
 
 **Approach**
@@ -146,8 +150,7 @@ CREATE TEMPORARY TABLE product_sessions AS (
 							  	, website_pageview_id
 							  	, CASE WHEN pageview_url = '/the-original-mr-fuzzy'  THEN 'mrfuzzy' 
 									     	WHEN pageview_url =  '/the-forever-love-bear' THEN 'lovebear' 
-                                        ELSE NULL END 
-                                        AS page_seen
+                        ELSE NULL END AS page_seen
 						FROM website_pageviews
 						WHERE created_at < '2013-04-10'
 							AND	created_at > '2013-01-06'
@@ -167,6 +170,7 @@ FROM website_pageviews wpv
             
 GROUP BY page_seen
 ;
+
 SELECT  page_seen
 		    ,COUNT(DISTINCT wpv.website_session_id) as sessions
 	    	,SUM(CASE WHEN pageview_url = '/cart' then 1 else 0 END)/COUNT(DISTINCT wpv.website_session_id) to_cart_rt
@@ -190,9 +194,10 @@ GROUP BY page_seen;
 
 ---
 
-## 5️⃣ Cross-Sell Analysis
+## 5. Cross-Sell Analysis
 
 **Business Question**
+
 On Sept 25, 2013, we added cross-sell functionality on the cart page. What impact did this have on user behavior and revenue?
 
 **Approach**
@@ -247,9 +252,10 @@ GROUP BY TIME_PERIOD;
 
 ---
 
-## 6️⃣ Portfolio Expansion Analysis
+## 6. Portfolio Expansion Analysis
 
 **Business Question**
+
 On Dec 12, 2013, we launched the Birthday Bear. What was its impact on product mix, order value, and revenue?
 
 **Approach**
@@ -291,9 +297,10 @@ ORDER BY 1 ;
 
 ---
 
-## 7️⃣ Product Refund Rates
+## 7. Product Refund Rates
 
 **Business Question**
+
 Mr. Fuzzy experienced supplier issues in 2013–2014. Can we confirm refund rates improved after supplier changes?
 
 **Approach**
