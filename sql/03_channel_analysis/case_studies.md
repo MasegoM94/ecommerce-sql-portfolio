@@ -1,12 +1,13 @@
-# 📑 Case Studies – Channel Portfolio & Paid Search Optimization
+# 📑 Case Studies – Channel Portfolio & Paid Search Optimisation
 
-This section compiles five analyses that explore how the company grew its acquisition portfolio, optimized across channels, and evaluated reliance on paid vs. free sources.
+This section compiles five analyses that explore how the company grew its acquisition portfolio, optimised across channels, and evaluated reliance on paid vs. free sources.
 
 ---
 
-## 1️⃣ Analysing Channel Portfolio
+## 1. Analysing Channel Portfolio
 
 **Business Question**
+
 With gsearch performing well and the site improving overall, we launched a second paid search channel, bsearch, around August 22. Can we pull weekly trended session volume since then and compare it to gsearch nonbrand to gauge how important this new channel will be?
 
 **Approach**
@@ -36,9 +37,10 @@ GROUP BY YEARWEEK(created_at)
 
 ---
 
-## 2️⃣ Comparing Channel Characteristics
+## 2. Comparing Channel Characteristics
 
 **Business Question**
+
 We’d like to learn more about the bsearch nonbrand campaign. Specifically, what percentage of traffic is coming from mobile, and how does that compare to gsearch? Aggregate data since August 22 is sufficient.
 
 **Approach**
@@ -68,9 +70,10 @@ GROUP BY utm_source
 
 ---
 
-## 3️⃣ Cross-Channel Bid Optimisation
+## 3. Cross-Channel Bid Optimisation
 
 **Business Question**
+
 Should bsearch nonbrand have the same bids as gsearch? Please pull nonbrand conversion rates from session to order for gsearch and bsearch, sliced by device type. Use Aug 22 – Sep 18 (pre-holiday campaign period).
 
 **Approach**
@@ -105,22 +108,10 @@ GROUP BY   	wbs.device_type
 
 ---
 
-## 4️⃣ Channel Portfolio Trends
+## 4. Channel Portfolio Trends
 
 **Business Question**
-What was the impact of bidding down bsearch nonbrand on Dec 2? Show weekly session volume by device, and benchmark bsearch vs gsearch.
 
-**Approach**
-Weekly sessions for gsearch and bsearch nonbrand, split by device (desktop vs mobile), since Nov 4. Also calculate bsearch as a percentage of gsearch.
-
-
-Here’s the case study summary for your fourth file (`04_channel_portfolio_trends.sql`) in the agreed format:
-
----
-
-## 4️⃣ Channel Portfolio Trends
-
-**Business Question**
 After bidding down bsearch nonbrand on December 2nd, how did session volumes trend? Please show weekly session volume for gsearch and bsearch nonbrand, split by device, since November 4th. Also include a comparison metric showing bsearch as a percentage of gsearch for each device.
 
 **Approach**
@@ -173,9 +164,10 @@ GROUP BY 	YEARWEEK(created_at)
 
 ---
 
-## 5️⃣ Analysing Free Channels
+## 5. Analysing Free Channels
 
 **Business Question**
+
 A potential investor is asking if we’re building momentum with our brand or if we’ll need to keep relying on paid traffic. Could you pull organic search, direct type-in, and paid brand search sessions by month, and show those sessions as a % of paid search nonbrand?
 
 **Approach**
