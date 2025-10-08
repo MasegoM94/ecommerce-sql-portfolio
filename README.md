@@ -56,60 +56,61 @@ Plain-English KPI definitions used across the case studies:
 
 1. **Traffic & Channel Portfolio**
 
-Analysis of session trends by traffic source — including traffic splits (paid vs organic vs direct), brand vs non-brand campaigns, and device mix.
-Using SQL to trace how traffic acquisition evolves and to reveal which channels should be prioritized.
+   * Analysis of session trends by traffic source — including traffic splits (paid vs organic vs direct), brand vs non-brand campaigns, and device mix.
+   * Using SQL to trace how traffic acquisition evolves and to reveal which channels should be prioritised.
 
    * [`sql/01_traffic_analysis/case_studies.md`](sql/01_traffic_analysis/case_studies.md)
    
 2. **Website & Funnel Performance**
 
-Analysis of pageview behavior, bounce metrics, and landing page effectiveness.
-Shows how user engagement on the site correlates to conversion, and highlights key page-level performance levers businesses should monitor.
+   * Analysis of pageview behavior, bounce metrics, and landing page effectiveness.
+   * Shows how user engagement on the site correlates to conversion, and highlights key page-level performance levers businesses should monitor.
 
-   * `sql/02_website_performance/case_studies.md`
+   * [`sql/02_website_performance/case_studies.md`](sql/02_website_performance/case_studies.md)
    
 3. **Channel Performance & Bid Strategy**
 
-Examine comparative traffic and conversion by source (gsearch, bsearch), including brand vs nonbrand splits and device-level trends.
-Use SQL to uncover which channels deliver efficient volume and where bid allocation should be refined.
+   * Examine comparative traffic and conversion by source (gsearch, bsearch), including brand vs nonbrand splits and device-level trends.
+   * Use SQL to uncover which channels deliver efficient volume and where bid allocation should be refined.
 
-   * `sql/03_channel_analysis/case_studies.md`
+   * [`sql/03_channel_analysis/case_studies.md`](sql/03_channel_analysis/case_studies.md)
    
 4. **Traffic & Order Patterns Over Time**
 
-Analyse seasonal, weekly, and hourly trends in sessions and orders—identifying recurring patterns, peaks, and dips.
-Demonstrates how businesses can plan capacity, staffing, and campaigns around predictable behavior cycles.
+   * Analyse seasonal, weekly, and hourly trends in sessions and orders—identifying recurring patterns, peaks, and dips.
+   * Demonstrates how businesses can plan capacity, staffing, and campaigns around predictable behavior cycles.
 
-   * `sql/04_business_patterns_and_seasonality/case_studies.md`
+   * [`sql/04_business_patterns_and_seasonality/case_studies.md`](sql/04_business_patterns_and_seasonality/case_studies.md)
    
 5. **Product & Portfolio Analytics**
 
-Deep dive into product-level performance: revenue, margin, pathing, cross-sell behaviour, and refund dynamics.
-Demonstrates how SQL can uncover product ROI, upsell potential, and risk in the catalogue.
+   * Deep dive into product-level performance: revenue, margin, pathing, cross-sell behaviour, and refund dynamics.
+   * Demonstrates how SQL can uncover product ROI, upsell potential, and risk in the catalogue.
 
-   * `sql/05_product_level_analysis/case_studies.md`
+   * [`sql/05_product_level_analysis/case_studies.md`](sql/05_product_level_analysis/case_studies.md)
    
-6. **User Behavior & Retention**
+6. **User Behaviour & Retention**
 
-Compare conversion, revenue, and channel attribution for new vs repeat sessions. Analyse how returning users convert and where they come back from.
-Highlights how user-level metrics strengthen retention narratives and inform growth tactics.
+   * Compare conversion, revenue, and channel attribution for new vs repeat sessions.
+   * Analyse how returning users convert and where they come back from.
+   * Highlights how user-level metrics strengthen retention narratives and inform growth tactics.
 
-   * `sql/06_user_level_analysis/case_studies.md`
+   * [`sql/06_user_level_analysis/case_studies.md`](sql/06_user_level_analysis/case_studies.md)
    
    
 **Mid-Course Growth & Search Analysis**
 
-Monthly/session trends for sessions and orders by Google Search (brand vs nonbrand), and device splits within nonbrand.
-Demonstrates how traffic segmentation and device analysis can test assumptions about campaign efficacy mid-project.
+   * Monthly/session trends for sessions and orders by Google Search (brand vs nonbrand), and device splits within nonbrand.
+   * Demonstrates how traffic segmentation and device analysis can test assumptions about campaign efficacy mid-project.
 
-   * `sql/midcourse_project/case_studies.md`
+   * [`sql/midcourse_project/case_studies.md`](sql/midcourse_project/case_studies.md)
    
 **Comprehensive Growth Narrative & Strategic Insights**
 
-This conclusive case study weaves together earlier analyses into a holistic growth story — pulling together traffic, conversion, product mix, and revenue uplift experiments (lander, billing tests) to forecast future opportunity.
-Demonstrates how to build a data narrative: from queries to insights to strategic recommendations.
+   * This conclusive case study weaves together earlier analyses into a holistic growth story — pulling together traffic, conversion, product mix, and revenue uplift experiments (lander, billing tests) to forecast future opportunity.
+   * Demonstrates how to build a data narrative: from queries to insights to strategic recommendations.
 
-   * `sql/final_project/case_studies.md`
+   * [`sql/final_project/case_studies.md`](sql/final_project/case_studies.md)
 
 ---
 
@@ -148,7 +149,7 @@ Folders present at the root: `docs/`, `sql/` (see repo view). ([GitHub][1])
 git clone https://github.com/MasegoM94/ecommerce-sql-portfolio.git
 ```
 
-2. **Open** in MySQL Workbench and create the schema/tables (see `docs/schema.md`).
+2. **Open** in MySQL Workbench and create the schema/tables (see `docs/schema.md`) with your own fictitious data.
 3. **Execute** SQL files in `/sql/` following the numbering published.
 4. **Read** the linked case studies in `/sql/` for narrative, metrics and takeaways.
 
@@ -178,5 +179,10 @@ git clone https://github.com/MasegoM94/ecommerce-sql-portfolio.git
 MIT — see [`LICENSE`](LICENSE). ([GitHub][1])
 
 ---
+
+This portfolio extends and deepens the work I began in the **Maven Analytics “Advanced SQL / MySQL for Analytics & Business Intelligence” course**.  
+I’ve reused and expanded the original dataset and case prompts to build out richer product, retention, and channel stories.
+
+...
 
 [1]: https://github.com/MasegoM94/ecommerce-sql-portfolio/tree/main "GitHub - MasegoM94/ecommerce-sql-portfolio: Journey through understanding Maven Fuzzy Factory data"
