@@ -59,7 +59,7 @@ Plain-English KPI definitions used across the case studies:
 Analysis of session trends by traffic source — including traffic splits (paid vs organic vs direct), brand vs non-brand campaigns, and device mix.
 Using SQL to trace how traffic acquisition evolves and to reveal which channels should be prioritized.
 
-   * `sql/01_traffic_analysis/case_studies.md`
+   * [`sql/01_traffic_analysis/case_studies.md`](sql/01_traffic_analysis/case_studies.md)
    
 2. **Website & Funnel Performance**
 
