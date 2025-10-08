@@ -4,9 +4,10 @@ This section explores whether customers return for multiple sessions, how quickl
 
 ---
 
-## 1️⃣ Identifying Repeat Visitors
+## 1. Identifying Repeat Visitors
 
 **Business Question**
+
 How many of our website visitors come back for another session? If customers return, they may be more valuable than we assumed.
 
 **Approach**
@@ -43,9 +44,10 @@ ORDER BY NUM_SESSIONS
 
 ---
 
-## 2️⃣ Analysing Repeat Behavior
+## 2. Analysing Repeat Behavior
 
 **Business Question**
+
 What is the minimum, maximum, and average time between a user’s first and second session?
 
 **Approach**
@@ -56,10 +58,8 @@ What is the minimum, maximum, and average time between a user’s first and seco
 ```sql
 WITH USER_SESSIONS 	AS ( 
                           SELECT	wbs.user_id
-								-- SUM(is_repeat_session) AS NUM_SESSIONS
                                 , DATE(MIN(wbs.created_at)) AS first_created_date
                                 , DATE(MIN(swbs.created_at)) AS second_created_date
-                                -- ,  MIN(created_at) OVER (PARTITION BY user_id ORDER BY created_at
           					    	FROM	website_sessions wbs
                                   inner JOIN website_sessions swbs
           								ON swbs.user_id = wbs.user_id
@@ -92,9 +92,10 @@ WHERE days_between_first_second is not null
 
 ---
 
-## 3️⃣ New vs. Repeat Session Performance
+## 3. New vs. Repeat Session Performance
 
 **Business Question**
+
 How do conversion rates and revenue per session compare for repeat sessions versus new sessions?
 
 **Approach**
@@ -125,9 +126,10 @@ GROUP BY is_repeat_session
 
 ---
 
-## 4️⃣ New vs. Repeat Channel Patterns
+## 4. New vs. Repeat Channel Patterns
 
 **Business Question**
+
 Through which channels do customers return? Are we paying for them again via nonbrand ads, or do they come back more cheaply?
 
 **Approach**
