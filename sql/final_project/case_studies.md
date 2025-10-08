@@ -4,9 +4,10 @@ This section explores the overall growth of the business, efficiency improvement
 
 ---
 
-## 1️⃣ Volume Growth Over Time
+## 1. Volume Growth Over Time
 
 **Business Question**
+
 Show overall session and order volume trended by quarter since launch.
 
 **Approach**
@@ -37,9 +38,10 @@ ORDER BY 1,2
 
 ---
 
-## 2️⃣ Efficiency Improvements
+## 2. Efficiency Improvements
 
 **Business Question**
+
 Show quarterly trends for session-to-order conversion rate, revenue per order, and revenue per session.
 
 **Approach**
@@ -75,9 +77,10 @@ ORDER BY 1,2
 
 ---
 
-## 3️⃣ Channel Growth
+## 3. Channel Growth
 
 **Business Question**
+
 Pull a quarterly view of orders from each acquisition channel.
 
 **Approach**
@@ -116,9 +119,10 @@ ORDER BY 1,2
 
 ---
 
-## 4️⃣ Channel Conversion Rate Trends
+## 4. Channel Conversion Rate Trends
 
 **Business Question**
+
 Show quarterly conversion-rate trends by channel and note key improvement periods.
 
 **Approach**
@@ -156,9 +160,10 @@ ORDER BY 1,2
 
 ---
 
-## 5️⃣ Monthly Revenue & Margin Trends
+## 5. Monthly Revenue & Margin Trends
 
 **Business Question**
+
 Pull monthly revenue and margin by product and note seasonality.
 
 **Approach**
@@ -194,9 +199,10 @@ ORDER BY 1,2
 
 ---
 
-## 6️⃣ Products Page Conversion & Engagement
+## 6. Products Page Conversion & Engagement
 
 **Business Question**
+
 How have clickthrough and conversion rates from the /products page evolved?
 
 **Approach**
@@ -241,13 +247,14 @@ GROUP BY 1,2
 **Insights**
 
 * Clickthrough rate climbed **0.71 → 0.86** (steady improvement).
-* Products-to-order conversion stabilized around 14 % in the last 6 months — a baseline for future optimization.
+* Products-to-order conversion stabilised around 14 % in the last 6 months — a baseline for future optimisation.
 
 ---
 
-## 7️⃣ Cross-Selling Analysis
+## 7. Cross-Selling Analysis
 
 **Business Question**
+
 After adding a 4th product as a primary item (Dec 2014), how do cross-sales perform between products?
 
 **Approach**
