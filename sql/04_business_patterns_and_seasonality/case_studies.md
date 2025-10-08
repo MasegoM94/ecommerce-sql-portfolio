@@ -66,8 +66,8 @@ WITH hour_weekday as (
 			      , created_at
             , HOUR(created_at ) as hr
             , WEEKDAY(created_at) as weekday
-	FROM website_sessions 
-	WHERE 	created_at between '2012-09-15'AND '2012-11-15'
+	      FROM website_sessions 
+      	WHERE created_at between '2012-09-15'AND '2012-11-15'
 ), 
 
 		sessions_by_day_hour as ( 
@@ -75,8 +75,8 @@ WITH hour_weekday as (
 			        	hr, 
 			        	weekday,
 				        COUNT(DISTINCT website_session_id) as sessions
-			FROM hour_weekday
-			GROUP BY 1,2,3
+			  FROM hour_weekday
+			  GROUP BY 1,2,3
 					)
 					
 SELECT hr 
