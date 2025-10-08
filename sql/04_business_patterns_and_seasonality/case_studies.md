@@ -4,9 +4,10 @@ This section highlights analyses of traffic and order patterns across time, focu
 
 ---
 
-## 1️⃣ Analysing Seasonality
+## 1. Analysing Seasonality
 
 **Business Question**
+
 2012 was a great year for us. As we continue to grow, we should take a look at 2012’s monthly and weekly volume patterns to see if we can find any seasonal trends we should plan for in 2013. Pull both session volume and order volume.
 
 **Approach**
@@ -47,9 +48,10 @@ GROUP BY YEARWEEK(wbs.created_at) ;
 
 ---
 
-## 2️⃣ Analysing Business Patterns
+## 2. Analysing Business Patterns
 
 **Business Question**
+
 We’re considering adding live chat support to improve customer experience. Can you analyze average session volume by **hour of day** and **day of week** so that we can staff appropriately? Use Sep 15 – Nov 15, 2012, avoiding holiday distortion.
 
 **Approach**
